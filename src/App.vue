@@ -35,7 +35,7 @@ export default {
       document.getElementById("cytoscape").setAttribute("style", "");
       this.$cytoscape.instance.then(cy => {              
         
-        cy.on('click', (e) => {
+        cy.on('tap', 'click', (e) => {
           const elemName = e.target.id()    
 
           // prevent double clicking
