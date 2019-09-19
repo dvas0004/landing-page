@@ -129,6 +129,9 @@ export default {
                     name: 'Bash',
                     depth: 3
                 }, {
+                    name: 'Docker',
+                    depth: 3
+                }, {
                     name: 'ElasticSearch',
                     depth: 2
                 }, {
@@ -183,6 +186,14 @@ export default {
                     source: 'CTO',
                     target: 'Machine Learning',
                     value: experience(2017, 2, true)
+                }, {
+                    source: 'CTO',
+                    target: 'Linux',
+                    value: experience(2017, 2, true)
+                }, {
+                    source: 'CTO',
+                    target: 'Docker',
+                    value: experience(2017, 11, true)
                 }, {
                     source: 'CTO',
                     target: 'Pentesting',
