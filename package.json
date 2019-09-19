@@ -9,8 +9,11 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "echarts": "^4.3.0",
+    "moment": "^2.24.0",
     "vue": "^2.6.10",
     "vue-cytoscape": "^0.2.10",
+    "vue-echarts": "^4.0.4",
     "vue-material": "^1.0.0-beta-11"
   },
   "devDependencies": {

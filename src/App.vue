@@ -8,8 +8,11 @@
         <img alt="Vue logo" src="./assets/logo.jpg">
       </md-avatar>
       
-      <HelloWorld msg="Welcome to David Vassallo's Landing Page"/>
-      <div id="cy">
+      <HelloWorld msg="Welcome to David Vassallo's Landing Page" :exp_tree="experience"/>
+      <div v-if="experience==true">
+        <SankeyWork style="width: 100vw; height: 600px;"/>
+      </div>
+      <div v-else id="cy">
         <cytoscape :config="config">
           <cy-element
             v-for="def in cyElements"
@@ -24,11 +27,13 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import SankeyWork from './components/SankeyWork.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    SankeyWork
   },
   mounted: function () {
     this.$nextTick(function () {
@@ -62,6 +67,9 @@ export default {
               return
             case 'Youtube Channel':
               window.location = "https://www.youtube.com/user/davvas0004/videos"
+              return
+            case 'Skill Tree':
+              this.experience = true
               return
             case 'Work Experience':
               this.cyElements = [...this.cyElements, {
@@ -97,7 +105,19 @@ export default {
                     source: 'Work Experience',
                     target: 'Malta News Portal'
                   }
+                }, {
+                data: {
+                    id: 'Skill Tree',
+                    img: './icons/sankey.png'
+                  }
+                },{
+                  data: {
+                    id: 'skill-tree-edge',
+                    source: 'Work Experience',
+                    target: 'Skill Tree'
+                  }
                 }
+
               ]
               break
             case 'Side Projects':
@@ -217,6 +237,7 @@ export default {
   },
   data: function () {
     return {
+      experience: false,
       elemClicked: {
 
       },
