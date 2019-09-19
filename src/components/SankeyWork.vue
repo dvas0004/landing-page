@@ -191,7 +191,7 @@ export default {
                     target: 'Linux',
                     value: experience(2017, 2, true)
                 }, {
-                    source: 'CTO',
+                    source: 'Linux',
                     target: 'Docker',
                     value: experience(2017, 11, true)
                 }, {
