@@ -274,6 +274,14 @@ export default {
                     source: 'DevOps Network & Security Engineer',
                     target: 'Linux',
                     value: experience(1, 2)
+                },{
+                    source: 'DevOps Network & Security Engineer',
+                    target: 'Python',
+                    value: experience(1, 2)
+                },{
+                    source: 'DevOps Network & Security Engineer',
+                    target: 'Java',
+                    value: experience(1, 2)
                 }, {
                     source: 'BlueCoat Systems',
                     target: 'Senior Tech Support Engineer',
