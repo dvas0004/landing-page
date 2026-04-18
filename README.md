@@ -5,11 +5,11 @@ Built with Vue 3 + Vite + TypeScript.
 ## Sections
 
 - **Hero** — Introduction & key roles
-- **About** — Bio & education
+- **About** — Bio & background
+- **Education** — Academic credentials
 - **Experience** — Career timeline
+- **Achievements** — Key professional milestones
 - **Skills** — Technical skills by category
-- **Certifications** — Security & professional certifications
-- **GitHub** — Notable repositories
 - **Contact** — Email, LinkedIn, GitHub
 
 ## Getting Started

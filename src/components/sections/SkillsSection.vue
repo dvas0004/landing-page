@@ -44,7 +44,7 @@ const skills = [
           :key="skill.category"
           class="skill-category"
         >
-          <div class="skill-icon">{{ skill.icon }}</div>
+          <div class="skill-icon" v-html="skill.icon"></div>
           <h3 class="skill-category-name">{{ skill.category }}</h3>
           <div class="skill-items">
             <span v-for="item in skill.items" :key="item" class="skill-item">{{ item }}</span>

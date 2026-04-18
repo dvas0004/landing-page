@@ -70,31 +70,76 @@ export const education = {
   },
 }
 
-export const certifications = [
-  { name: 'Cisco Certified Design Professional (CCDP)', issuer: 'Cisco', year: '2014' },
-  { name: 'CCNP Security', issuer: 'Cisco', year: '2011' },
-  { name: 'CCNP Routing & Switching', issuer: 'Cisco', year: '2009' },
-  { name: 'Certified Ethical Hacker (CEH)', issuer: 'EC-Council', year: '2011' },
-  { name: 'CNSE', issuer: 'Palo Alto Networks', year: '2012' },
-  { name: 'LPIC-2', issuer: 'Linux Foundation', year: '2011' },
-  { name: 'Citrix Certified Administrator', issuer: 'Citrix', year: '2013' },
-  { name: 'Bluecoat Certified Proxy Professional', issuer: 'BlueCoat', year: '2010' },
-  { name: 'Certified SonicWALL Systems Administrator', issuer: 'Dell SonicWALL', year: '2009' },
-  { name: 'Microsoft Certified Professional', issuer: 'Microsoft', year: '2010' },
-]
-
-export const honors = [
+export const achievements = [
   {
-    title: 'Hackathon 2014 Winner',
-    issuer: 'MITA - Malta Information Technology Agency',
-    date: 'Oct 2014',
-    description: 'Winner of MITA Hackathon 2014 as part of team "Senseon", organized by David Kennedy in "find the flag" format.',
+    title: 'CyberSift Sentio — Next-Gen UI',
+    year: '2026',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>',
+    description: 'Launched the new CyberSift UI (Sentio) — a modern, user-friendly interface for our security operations platform',
   },
   {
-    title: 'Most Technical Project - Startup Weekend Malta',
-    issuer: 'Startup Weekend Malta',
-    date: 'May 2013',
-    description: 'MagicWaves, a financial website projecting future stock and portfolio behaviour, won the "most technical project" award among approximately 20 contestants.',
+    title: 'NiFi Flow-Based Pipeline Wrapper',
+    year: '2026',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>',
+    description: 'Built a NiFi wrapper with flow-based pipeline architecture, enabling easier data ingestion and processing workflows',
+  },
+  {
+    title: 'Cloud UI Shell On-Premise',
+    year: '2026',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12A10 10 0 0 0 12 2v10l10-10z"/><path d="M6 12A6 6 0 0 1 12 6v6l-6-6z"/><path d="M12 22A10 10 0 0 0 22 12H12L6 18"/></svg>',
+    description: 'Developed a Cloud UI Shell solution that works with on-premise data — bridging the gap between cloud-like UX and on-prem security requirements',
+  },
+  {
+    title: 'LLM Prompt Pipeline with Automated Evaluation',
+    year: '2026',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>',
+    description: 'Implemented an innovative LLM-as-a-Judge evaluation system integrated directly into GitHub Actions:',
+    highlights: [
+      'Automated prompt testing and evaluation',
+      'Beautiful annotations generated through the pipeline',
+      'Seamless CI/CD integration for LLM quality assurance',
+    ],
+  },
+  {
+    title: 'Database Performance Optimization',
+    year: '2025',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>',
+    description: 'Achieved a 4x improvement in data ingestion throughput by optimizing database performance for an event processing pipeline:',
+    highlights: [
+      'Re engineered the connection pool configuration using jasync-sql async driver for PostgreSQL with tuned connection lifecycle parameters',
+      'Optimized caching strategies to reduce redundant queries',
+      'Refined database queries with targeted patterns (e.g., LIMIT 1) to minimize overhead',
+    ],
+    result: 'Scaled from ~500K to ~2M events processed every 5 minutes',
+  },
+  {
+    title: 'CyberSift SIEM Architecture Overhaul',
+    year: '2023',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+    description: 'Led a major backend migration that modernized our security infrastructure:',
+    highlights: [
+      'Migrated from Redis to a custom cs-redis implementation',
+      'Switched to UNLOGGED PostgreSQL with the jasync-sql async driver (Java/Kotlin) for non-blocking I/O',
+      'Significantly improved throughput and reduced I/O overhead for our SIEM platform',
+    ],
+  },
+  {
+    title: 'Open Source Contributions',
+    year: 'Ongoing',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>',
+    description: 'Made meaningful contributions to several notable projects:',
+    contributions: [
+      { project: 'OpenSearch-Dashboards', links: [{ label: '#8020', url: 'https://github.com/opensearch-project/OpenSearch-Dashboards/issues/8020' }, { label: '#6326', url: 'https://github.com/opensearch-project/OpenSearch-Dashboards/issues/6326' }] },
+      { project: 'go-sqlite3', links: [{ label: 'PR #1100', url: 'https://github.com/mattn/go-sqlite3/pull/1100/commits/112e196139264c8240c7341daf715edc79b22ab5' }, { label: 'PR #1099', url: 'https://github.com/mattn/go-sqlite3/pull/1099/commits/79a80cc3f1eab54bce5fe2651093c414d6ee4ce3' }] },
+      { project: 'openwec & ossec-hids', links: [{ label: 'PR #45', url: 'https://github.com/cea-sec/openwec/pull/45' }, { label: 'PR #1102', url: 'https://github.com/ossec/ossec-hids/pull/1102' }] },
+    ],
+  },
+  {
+    title: 'ZAP All-in-One Notes Plugin',
+    year: 'Contributed',
+    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+    description: 'Built and contributed an All-in-One Notes plugin for OWASP ZAP (Zed Attack Proxy), enhancing the security testing experience for penetration testers.',
+    link: { label: 'More info', url: 'https://www.zaproxy.org/docs/desktop/addons/all-in-one-notes/about/' },
   },
 ]
 

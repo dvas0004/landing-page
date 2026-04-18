@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
 import HomeView from './views/HomeView.vue'
+
+const route = useRoute()
 </script>
 
 <template>
-  <HomeView />
+  <HomeView v-if="route.path === '/'" />
+  <router-view v-else />
 </template>
 
 <style>
