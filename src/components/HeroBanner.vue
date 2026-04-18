@@ -24,13 +24,31 @@ function scrollToContact() {
       <div class="hero-visual">
         <div class="orbit-ring">
           <span class="orbit-dot" />
+          <span class="orbit-label">About</span>
         </div>
         <div class="orbit-ring ring-2">
           <span class="orbit-dot" />
+          <span class="orbit-label">Experience</span>
         </div>
         <div class="orbit-ring ring-3">
           <span class="orbit-dot" />
-          <span class="orbit-dot dot-2" />
+          <span class="orbit-label">Achievements</span>
+        </div>
+        <div class="orbit-ring ring-4">
+          <span class="orbit-dot" />
+          <span class="orbit-label">Cybersift</span>
+        </div>
+        <div class="orbit-ring ring-5">
+          <span class="orbit-dot" />
+          <span class="orbit-label">Education</span>
+        </div>
+        <div class="orbit-ring ring-6">
+          <span class="orbit-dot" />
+          <span class="orbit-label">Skills</span>
+        </div>
+        <div class="orbit-ring ring-7">
+          <span class="orbit-dot" />
+          <span class="orbit-label">Contact</span>
         </div>
         <div class="center-dot" />
       </div>
@@ -157,9 +175,10 @@ function scrollToContact() {
   position: absolute;
   border: 1px solid rgba(16, 185, 129, 0.15);
   border-radius: 50%;
+  width: 200px;
+  height: 200px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   overflow: visible;
@@ -175,11 +194,6 @@ function scrollToContact() {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 8px var(--glow);
-}
-
-.orbit-dot.dot-2 {
-  top: auto;
-  bottom: 0;
 }
 
 .orbit-ring:nth-child(1) {
@@ -200,6 +214,30 @@ function scrollToContact() {
   animation: spin 40s linear infinite;
 }
 
+.orbit-ring.ring-4 {
+  width: 210px;
+  height: 210px;
+  animation: spin 35s linear infinite reverse;
+}
+
+.orbit-ring.ring-5 {
+  width: 250px;
+  height: 250px;
+  animation: spin 45s linear infinite;
+}
+
+.orbit-ring.ring-6 {
+  width: 290px;
+  height: 290px;
+  animation: spin 55s linear infinite reverse;
+}
+
+.orbit-ring.ring-7 {
+  width: 330px;
+  height: 330px;
+  animation: spin 65s linear infinite;
+}
+
 .center-dot {
   position: absolute;
   top: 50%;
@@ -217,6 +255,52 @@ function scrollToContact() {
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+.orbit-label {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.orbit-ring:first-of-type .orbit-label {
+  animation: counter-spin 20s linear infinite reverse;
+}
+
+.orbit-ring.ring-2 .orbit-label {
+  animation: counter-spin 30s linear infinite;
+}
+
+.orbit-ring.ring-3 .orbit-label {
+  animation: counter-spin 40s linear infinite reverse;
+}
+
+.orbit-ring.ring-4 .orbit-label {
+  animation: counter-spin 35s linear infinite;
+}
+
+.orbit-ring.ring-5 .orbit-label {
+  animation: counter-spin 45s linear infinite reverse;
+}
+
+.orbit-ring.ring-6 .orbit-label {
+  animation: counter-spin 55s linear infinite;
+}
+
+.orbit-ring.ring-7 .orbit-label {
+  animation: counter-spin 65s linear infinite reverse;
+}
+
+@keyframes counter-spin {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
@@ -232,8 +316,8 @@ function scrollToContact() {
     justify-content: center;
   }
   .hero-visual {
-    width: 220px;
-    height: 220px;
+    width: 260px;
+    height: 260px;
   }
 }
 </style>
