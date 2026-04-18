@@ -158,5 +158,5 @@ export const github = {
 export const contact = {
   linkedin: 'https://www.linkedin.com/in/dvas0004/',
   github: 'https://github.com/dvas0004',
-  email: 'david@cybersift.io',
+  email: 'david.vassallo at cybersift.io',
 }
