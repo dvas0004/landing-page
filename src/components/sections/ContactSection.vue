@@ -7,7 +7,7 @@ import { contact } from '../../data/profile.ts'
     <div class="container">
       <h2 class="section-title">Get in Touch</h2>
       <p class="contact-text">
-        Interested in working together or want to discuss cybersecurity, full-stack development, or machine learning? Let's connect.
+        Interested in working together or want to discuss cybersecurity, full-stack development, AI or machine learning? Let's connect.
       </p>
       <div class="contact-links">
         <a :href="contact.email" class="contact-link">
