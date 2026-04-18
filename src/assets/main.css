@@ -1,0 +1,24 @@
+@import './base.css';
+
+#app {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
