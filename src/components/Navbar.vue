@@ -7,9 +7,10 @@ const scrolled = ref(false)
 
 const navItems = [
   { label: 'About', id: 'about' },
-  { label: 'Education', id: 'education' },
   { label: 'Experience', id: 'experience' },
   { label: 'Achievements', id: 'achievements' },
+  { label: 'CyberSift', id: 'cybersift' },
+  { label: 'Education', id: 'education' },
   { label: 'Skills', id: 'skills' },
   { label: 'Contact', id: 'contact' },
 ]

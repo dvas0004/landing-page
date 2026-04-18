@@ -29,14 +29,22 @@ import { contact } from '../../data/profile.ts'
           </svg>
           <span>GitHub</span>
         </a>
+        <a :href="contact.blog" target="_blank" rel="noopener" class="contact-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19l7-7 3 3-7 7-3-3z" />
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+            <path d="M2 2l7.586 7.586" />
+            <circle cx="11" cy="11" r="2" />
+          </svg>
+          <span>Blog</span>
+        </a>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.section-alt {
-  background: var(--bg-secondary);
+.section {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
