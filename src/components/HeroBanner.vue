@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { name, title, tagline, contact } from '../data/profile.ts'
 
-function scrollToContact() {
-  const el = document.getElementById('contact')
+function scrollToSection(id: string) {
+  const el = document.getElementById(id)
   if (el) el.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
@@ -17,38 +17,38 @@ function scrollToContact() {
         <p class="hero-title">{{ title }}</p>
         <p class="hero-tagline">{{ tagline }}</p>
         <div class="hero-actions">
-          <a href="#contact" @click.prevent="scrollToContact" class="btn btn-primary">Get in Touch</a>
+          <a href="#contact" @click.prevent="scrollToSection('contact')" class="btn btn-primary">Get in Touch</a>
           <a :href="contact.blog" target="_blank" rel="noopener" class="btn btn-secondary">View Blog</a>
         </div>
       </div>
       <div class="hero-visual">
-        <div class="orbit-ring">
+        <div class="orbit-ring" @click="scrollToSection('about')">
           <span class="orbit-dot" />
-          <span class="orbit-label">About</span>
+          <button class="orbit-label">About</button>
         </div>
-        <div class="orbit-ring ring-2">
+        <div class="orbit-ring ring-2" @click="scrollToSection('experience')">
           <span class="orbit-dot" />
-          <span class="orbit-label">Experience</span>
+          <button class="orbit-label">Experience</button>
         </div>
-        <div class="orbit-ring ring-3">
+        <div class="orbit-ring ring-3" @click="scrollToSection('achievements')">
           <span class="orbit-dot" />
-          <span class="orbit-label">Achievements</span>
+          <button class="orbit-label">Achievements</button>
         </div>
-        <div class="orbit-ring ring-4">
+        <div class="orbit-ring ring-4" @click="scrollToSection('cybersift')">
           <span class="orbit-dot" />
-          <span class="orbit-label">Cybersift</span>
+          <button class="orbit-label">Cybersift</button>
         </div>
-        <div class="orbit-ring ring-5">
+        <div class="orbit-ring ring-5" @click="scrollToSection('education')">
           <span class="orbit-dot" />
-          <span class="orbit-label">Education</span>
+          <button class="orbit-label">Education</button>
         </div>
-        <div class="orbit-ring ring-6">
+        <div class="orbit-ring ring-6" @click="scrollToSection('skills')">
           <span class="orbit-dot" />
-          <span class="orbit-label">Skills</span>
+          <button class="orbit-label">Skills</button>
         </div>
-        <div class="orbit-ring ring-7">
+        <div class="orbit-ring ring-7" @click="scrollToSection('contact')">
           <span class="orbit-dot" />
-          <span class="orbit-label">Contact</span>
+          <button class="orbit-label">Contact</button>
         </div>
         <div class="center-dot" />
       </div>
@@ -265,7 +265,19 @@ function scrollToContact() {
   white-space: nowrap;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  margin: 0;
+  font-family: inherit;
+  line-height: inherit;
+  transition: color 0.2s;
+}
+
+.orbit-label:hover {
+  color: var(--accent);
 }
 
 .orbit-ring:first-of-type .orbit-label {
