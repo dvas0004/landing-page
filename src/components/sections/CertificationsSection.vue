@@ -3,24 +3,20 @@ import { certifications } from '../../data/profile.ts'
 </script>
 
 <template>
-  <section id="certifications" class="section">
+  <section id="certifications" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Certifications & Honors</h2>
+      <h2 class="section-title">Certifications</h2>
       <div class="cert-grid">
         <div
-          v-for="cert in certifications"
-          :key="cert.name"
+          v-for="(cert, i) in certifications"
+          :key="i"
           class="cert-card"
         >
-          <div class="cert-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-            </svg>
+          <div class="cert-header">
+            <span class="cert-name">{{ cert.name }}</span>
+            <span class="cert-year">{{ cert.year }}</span>
           </div>
-          <div>
-            <p class="cert-name">{{ cert.name }}</p>
-            <p class="cert-issuer">{{ cert.issuer }}</p>
-          </div>
+          <p class="cert-issuer">{{ cert.issuer }}</p>
         </div>
       </div>
     </div>
@@ -35,35 +31,40 @@ import { certifications } from '../../data/profile.ts'
 }
 
 .cert-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 1.25rem;
-  transition: all 0.2s;
+  transition: border-color 0.3s;
 }
 
 .cert-card:hover {
-  border-color: rgba(16, 185, 129, 0.3);
-  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.2);
 }
 
-.cert-icon {
-  color: var(--accent);
-  flex-shrink: 0;
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .cert-name {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-primary);
-  margin-bottom: 0.15rem;
+}
+
+.cert-year {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  white-space: nowrap;
 }
 
 .cert-issuer {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+  color: var(--accent);
+  font-size: 0.85rem;
 }
 </style>

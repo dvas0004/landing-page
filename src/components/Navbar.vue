@@ -1,8 +1,20 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { name, title, contact } from '../data/profile'
+
+defineOptions({ name: 'MainNavbar' })
 
 const scrolled = ref(false)
+
+const navItems = [
+  { label: 'About', id: 'about' },
+  { label: 'Education', id: 'education' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'Certifications', id: 'certifications' },
+  { label: 'Honors', id: 'honors' },
+  { label: 'Skills', id: 'skills' },
+  { label: 'GitHub', id: 'github' },
+  { label: 'Contact', id: 'contact' },
+]
 
 function toggleNav() {
   document.getElementById('mobile-menu')?.classList.toggle('hidden')
@@ -34,20 +46,10 @@ function scrollTo(section: string) {
         <span></span>
       </button>
       <div id="mobile-menu" class="nav-links hidden">
-        <a href="#about" @click.prevent="scrollTo('about')">About</a>
-        <a href="#experience" @click.prevent="scrollTo('experience')">Experience</a>
-        <a href="#skills" @click.prevent="scrollTo('skills')">Skills</a>
-        <a href="#certifications" @click.prevent="scrollTo('certifications')">Certifications</a>
-        <a href="#github" @click.prevent="scrollTo('github')">GitHub</a>
-        <a href="#contact" @click.prevent="scrollTo('contact')">Contact</a>
+        <a v-for="item in navItems" :key="item.id" :href="`#${item.id}`" @click.prevent="scrollTo(item.id)">{{ item.label }}</a>
       </div>
       <div class="nav-links desktop">
-        <a @click.prevent="scrollTo('about')">About</a>
-        <a @click.prevent="scrollTo('experience')">Experience</a>
-        <a @click.prevent="scrollTo('skills')">Skills</a>
-        <a @click.prevent="scrollTo('certifications')">Certifications</a>
-        <a @click.prevent="scrollTo('github')">GitHub</a>
-        <a @click.prevent="scrollTo('contact')">Contact</a>
+        <a v-for="item in navItems" :key="item.id" @click.prevent="scrollTo(item.id)">{{ item.label }}</a>
       </div>
     </div>
   </nav>
@@ -119,6 +121,10 @@ function scrollTo(section: string) {
 
 .nav-links a:hover {
   color: var(--accent);
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 768px) {
