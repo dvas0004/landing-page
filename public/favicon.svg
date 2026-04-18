@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1a2235"/>
+      <stop offset="100%" stop-color="#0a0e17"/>
+    </radialGradient>
+    <linearGradient id="shield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
+  <!-- Shield outline -->
+  <path d="M16 3L5 8v8c0 6.5 4.5 12.5 11 14 6.5-1.5 11-7.5 11-14V8L16 3z" fill="none" stroke="url(#shield)" stroke-width="2"/>
+  <!-- Checkmark -->
+  <path d="M11 16l3.5 3.5L21 12" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
