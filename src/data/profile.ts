@@ -3,7 +3,7 @@ export const title = 'CTO at CyberSift'
 export const tagline = 'Creative engineer & disruptive thinker pushing technological boundaries'
 export const location = 'Malta'
 
-export const about = `A creative engineer and disruptive thinker with a tremendous passion for challenging technological boundaries. Continuously pushing the envelope, hacking, creating and exploring technology.\n\nWith 18+ years of experience spanning cybersecurity, full-stack development, machine learning, and systems architecture, I build solutions that merge deep technical expertise with practical business value.`
+export const about = `A creative engineer and disruptive thinker with a tremendous passion for challenging technological boundaries. Continuously pushing the envelope, hacking, creating and exploring technology.\n\nWith 18+ years of experience spanning cybersecurity, full-stack development, machine learning, and systems architecture, I build solutions that merge deep technical expertise with practical business value.\n\n<strong>Co-Founder of CyberSift</strong> — deeply experienced in <strong>blue team operations</strong>, having designed and built a SIEM platform (<strong>Sentio</strong>) and an attack vulnerability management tool (<strong>Tutela</strong>). I've also led <strong>Security Operations Center (SOC)</strong> operations, building out teams, workflows, and incident response processes.\n\nMost recently, I've been focused on developing <strong>autonomous LLM AI agents</strong> and designing <strong>custom agent orchestration frameworks</strong> to unlock new capabilities in AI-driven automation.`
 
 export const experience = [
   {

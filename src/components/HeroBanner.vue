@@ -22,9 +22,16 @@ function scrollToContact() {
         </div>
       </div>
       <div class="hero-visual">
-        <div class="orbit-ring" />
-        <div class="orbit-ring ring-2" />
-        <div class="orbit-ring ring-3" />
+        <div class="orbit-ring">
+          <span class="orbit-dot" />
+        </div>
+        <div class="orbit-ring ring-2">
+          <span class="orbit-dot" />
+        </div>
+        <div class="orbit-ring ring-3">
+          <span class="orbit-dot" />
+          <span class="orbit-dot dot-2" />
+        </div>
         <div class="center-dot" />
       </div>
     </div>
@@ -153,6 +160,26 @@ function scrollToContact() {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+
+.orbit-dot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px var(--glow);
+}
+
+.orbit-dot.dot-2 {
+  top: auto;
+  bottom: 0;
 }
 
 .orbit-ring:nth-child(1) {

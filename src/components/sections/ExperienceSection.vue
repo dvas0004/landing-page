@@ -35,6 +35,8 @@ import { experience } from '../../data/profile.ts'
 <style scoped>
 .section-alt {
   background: var(--bg-secondary);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .timeline {

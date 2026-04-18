@@ -3,7 +3,7 @@ import { education } from '../../data/profile.ts'
 </script>
 
 <template>
-  <section id="education" class="section">
+  <section id="education" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Education</h2>
       <div class="education-main">
@@ -28,6 +28,12 @@ import { education } from '../../data/profile.ts'
 </template>
 
 <style scoped>
+.section-alt {
+  background: var(--bg-secondary);  
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .education-main {
   max-width: 800px;
 }

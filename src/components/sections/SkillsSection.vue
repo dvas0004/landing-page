@@ -56,6 +56,11 @@ const skills = [
 </template>
 
 <style scoped>
+.section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

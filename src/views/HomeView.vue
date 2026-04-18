@@ -12,10 +12,10 @@ import EducationSection from '../components/sections/EducationSection.vue'
 <template>
   <Navbar />
   <HeroBanner />
-  <AboutSection />
-  <EducationSection />
+  <AboutSection />   
   <ExperienceSection />
-  <AchievementsSection />
+  <AchievementsSection />  
+  <EducationSection />   
   <SkillsSection />
   <ContactSection />
 </template>

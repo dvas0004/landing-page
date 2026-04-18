@@ -3,7 +3,7 @@ import { contact } from '../../data/profile.ts'
 </script>
 
 <template>
-  <section id="contact" class="section">
+  <section id="contact" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Get in Touch</h2>
       <p class="contact-text">
@@ -35,6 +35,12 @@ import { contact } from '../../data/profile.ts'
 </template>
 
 <style scoped>
+.section-alt {
+  background: var(--bg-secondary);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .contact-text {
   color: var(--text-secondary);
   font-size: 1.1rem;

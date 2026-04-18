@@ -60,6 +60,11 @@ import { achievements } from '../../data/profile.ts'
 </template>
 
 <style scoped>
+.section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .achievements-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));

@@ -6,7 +6,7 @@ import { about } from '../../data/profile.ts'
   <section id="about" class="section">
     <div class="container">
       <h2 class="section-title">About</h2>
-      <p class="about-text">{{ about }}</p>
+      <div class="about-text" v-html="about" />
     </div>
   </section>
 </template>
@@ -14,6 +14,8 @@ import { about } from '../../data/profile.ts'
 <style scoped>
 .section {
   padding: 5rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .about-text {
