@@ -18,7 +18,7 @@ function scrollToContact() {
         <p class="hero-tagline">{{ tagline }}</p>
         <div class="hero-actions">
           <a href="#contact" @click.prevent="scrollToContact" class="btn btn-primary">Get in Touch</a>
-          <a :href="contact.github" target="_blank" rel="noopener" class="btn btn-secondary">View GitHub</a>
+          <a :href="contact.blog" target="_blank" rel="noopener" class="btn btn-secondary">View Blog</a>
         </div>
       </div>
       <div class="hero-visual">
