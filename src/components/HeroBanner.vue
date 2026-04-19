@@ -22,34 +22,35 @@ function scrollToSection(id: string) {
         </div>
       </div>
       <div class="hero-visual">
-        <div class="orbit-ring" @click="scrollToSection('about')">
+        <div class="orbit-ring ring-8">
           <span class="orbit-dot" />
-          <button class="orbit-label">About</button>
+          <button class="orbit-label" @click.stop="scrollToSection('contact')">Contact</button>
         </div>
-        <div class="orbit-ring ring-2" @click="scrollToSection('experience')">
+        <div class="orbit-ring ring-7">
           <span class="orbit-dot" />
-          <button class="orbit-label">Experience</button>
+          <button class="orbit-label" @click.stop="scrollToSection('about')">About</button>
         </div>
-        <div class="orbit-ring ring-3" @click="scrollToSection('achievements')">
+        <div class="orbit-ring ring-6">
           <span class="orbit-dot" />
-          <button class="orbit-label">Achievements</button>
+          <button class="orbit-label" @click.stop="scrollToSection('experience')">Experience</button>
         </div>
-        <div class="orbit-ring ring-4" @click="scrollToSection('cybersift')">
+        <div class="orbit-ring ring-5">
           <span class="orbit-dot" />
-          <button class="orbit-label">Cybersift</button>
+          <button class="orbit-label" @click.stop="scrollToSection('achievements')">Achievements</button>
         </div>
-        <div class="orbit-ring ring-5" @click="scrollToSection('education')">
+        <div class="orbit-ring ring-4">
           <span class="orbit-dot" />
-          <button class="orbit-label">Education</button>
+          <button class="orbit-label" @click.stop="scrollToSection('cybersift')">Cybersift</button>
         </div>
-        <div class="orbit-ring ring-6" @click="scrollToSection('skills')">
+        <div class="orbit-ring ring-3">
           <span class="orbit-dot" />
-          <button class="orbit-label">Skills</button>
+          <button class="orbit-label" @click.stop="scrollToSection('education')">Education</button>
         </div>
-        <div class="orbit-ring ring-7" @click="scrollToSection('contact')">
+        <div class="orbit-ring ring-2">
           <span class="orbit-dot" />
-          <button class="orbit-label">Contact</button>
+          <button class="orbit-label" @click.stop="scrollToSection('skills')">Skills</button>
         </div>
+        
         <div class="center-dot" />
       </div>
     </div>
@@ -196,21 +197,21 @@ function scrollToSection(id: string) {
   box-shadow: 0 0 8px var(--glow);
 }
 
-.orbit-ring:nth-child(1) {
-  width: 200px;
-  height: 200px;
+.orbit-ring.ring-1 {
+  width: 100px;
+  height: 100px;
   animation: spin 20s linear infinite;
 }
 
 .orbit-ring.ring-2 {
-  width: 260px;
-  height: 260px;
+  width: 150px;
+  height: 150px;
   animation: spin 30s linear infinite reverse;
 }
 
 .orbit-ring.ring-3 {
-  width: 320px;
-  height: 320px;
+  width: 190px;
+  height: 190px;
   animation: spin 40s linear infinite;
 }
 
@@ -236,6 +237,12 @@ function scrollToSection(id: string) {
   width: 330px;
   height: 330px;
   animation: spin 65s linear infinite;
+}
+
+.orbit-ring.ring-8 {
+  width: 370px;
+  height: 370px;
+  animation: spin 75s linear infinite reverse;
 }
 
 .center-dot {
@@ -273,15 +280,13 @@ function scrollToSection(id: string) {
   margin: 0;
   font-family: inherit;
   line-height: inherit;
-  transition: color 0.2s;
+  text-shadow: 0 0 6px rgba(16, 185, 129, 0.3);
+  transition: color 0.2s, text-shadow 0.2s;
 }
 
 .orbit-label:hover {
   color: var(--accent);
-}
-
-.orbit-ring:first-of-type .orbit-label {
-  animation: counter-spin 20s linear infinite reverse;
+  text-shadow: 0 0 8px var(--glow), 0 0 16px var(--glow);
 }
 
 .orbit-ring.ring-2 .orbit-label {
@@ -308,9 +313,13 @@ function scrollToSection(id: string) {
   animation: counter-spin 65s linear infinite reverse;
 }
 
+.orbit-ring.ring-8 .orbit-label {
+  animation: counter-spin 75s linear infinite;
+}
+
 @keyframes counter-spin {
-  from { transform: translateX(-50%) rotate(0deg); }
-  to { transform: translateX(-50%) rotate(360deg); }
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 @media (max-width: 768px) {
