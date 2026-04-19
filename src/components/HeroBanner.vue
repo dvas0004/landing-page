@@ -1,6 +1,8 @@
 <script setup lang="ts">
+// Import profile data from the centralized profile module
 import { name, title, tagline, contact } from '../data/profile.ts'
 
+// Smooth-scroll handler: scrolls the page to the section with the given id
 function scrollToSection(id: string) {
   const el = document.getElementById(id)
   if (el) el.scrollIntoView({ behavior: 'smooth' })
@@ -9,19 +11,27 @@ function scrollToSection(id: string) {
 
 <template>
   <section id="hero" class="hero">
+    <!-- Decorative radial-gradient background overlay -->
     <div class="hero-bg" />
+
     <div class="container hero-content">
+      <!-- Left side: personal info and CTA buttons -->
       <div class="hero-text">
         <p class="hero-greeting">Hello, I'm</p>
         <h1 class="hero-name">{{ name }}</h1>
         <p class="hero-title">{{ title }}</p>
         <p class="hero-tagline">{{ tagline }}</p>
         <div class="hero-actions">
+          <!-- "Get in Touch" scrolls to the contact section -->
           <a href="#contact" @click.prevent="scrollToSection('contact')" class="btn btn-primary">Get in Touch</a>
+          <!-- Opens the blog URL in a new tab -->
           <a :href="contact.blog" target="_blank" rel="noopener" class="btn btn-secondary">View Blog</a>
         </div>
       </div>
+
+      <!-- Right side: concentric orbiting navigation rings -->
       <div class="hero-visual">
+        <!-- Each ring rotates around the center dot; buttons inside link to page sections -->
         <div class="orbit-ring ring-8">
           <span class="orbit-dot" />
           <button class="orbit-label" @click.stop="scrollToSection('contact')">Contact</button>
@@ -50,7 +60,8 @@ function scrollToSection(id: string) {
           <span class="orbit-dot" />
           <button class="orbit-label" @click.stop="scrollToSection('skills')">Skills</button>
         </div>
-        
+
+        <!-- Central glowing dot -->
         <div class="center-dot" />
       </div>
     </div>
@@ -58,6 +69,7 @@ function scrollToSection(id: string) {
 </template>
 
 <style scoped>
+/* Full-viewport hero section with centered content */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -67,6 +79,7 @@ function scrollToSection(id: string) {
   padding: 6rem 0 4rem;
 }
 
+/* Decorative radial-gradient background for subtle green glow */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -76,6 +89,7 @@ function scrollToSection(id: string) {
   pointer-events: none;
 }
 
+/* Flex layout: text on left, orbits on right */
 .hero-content {
   display: flex;
   align-items: center;
@@ -85,11 +99,13 @@ function scrollToSection(id: string) {
   z-index: 1;
 }
 
+/* Personal info block */
 .hero-text {
   flex: 1;
   max-width: 600px;
 }
 
+/* "Hello, I'm" label in accent color */
 .hero-greeting {
   color: var(--accent);
   font-size: 1rem;
@@ -99,6 +115,7 @@ function scrollToSection(id: string) {
   margin-bottom: 0.5rem;
 }
 
+/* Large responsive name using clamp() */
 .hero-name {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
@@ -107,6 +124,7 @@ function scrollToSection(id: string) {
   margin-bottom: 0.75rem;
 }
 
+/* Job title, slightly smaller */
 .hero-title {
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   font-weight: 600;
@@ -114,6 +132,7 @@ function scrollToSection(id: string) {
   margin-bottom: 1rem;
 }
 
+/* Brief descriptive tagline */
 .hero-tagline {
   font-size: 1.05rem;
   color: var(--text-secondary);
@@ -122,12 +141,14 @@ function scrollToSection(id: string) {
   margin-bottom: 2rem;
 }
 
+/* CTA button row */
 .hero-actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
+/* Base button styles */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -140,12 +161,12 @@ function scrollToSection(id: string) {
   letter-spacing: 0.02em;
 }
 
+/* Primary filled button (accent color) */
 .btn-primary {
   background: var(--accent);
   color: #000;
   border: none;
 }
-
 .btn-primary:hover {
   background: var(--accent-hover);
   color: #000;
@@ -153,18 +174,19 @@ function scrollToSection(id: string) {
   box-shadow: 0 4px 20px var(--glow);
 }
 
+/* Secondary outline button */
 .btn-secondary {
   background: transparent;
   color: var(--accent);
   border: 1px solid var(--accent);
 }
-
 .btn-secondary:hover {
   background: var(--accent-dim);
   color: var(--accent);
   transform: translateY(-1px);
 }
 
+/* Right-side visual: fixed-size container for orbit rings */
 .hero-visual {
   flex-shrink: 0;
   width: 320px;
@@ -172,6 +194,7 @@ function scrollToSection(id: string) {
   position: relative;
 }
 
+/* Shared orbit ring: centered, circular, semi-transparent border */
 .orbit-ring {
   position: absolute;
   border: 1px solid rgba(16, 185, 129, 0.15);
@@ -185,6 +208,7 @@ function scrollToSection(id: string) {
   overflow: visible;
 }
 
+/* Accent dot at the top of each ring */
 .orbit-dot {
   position: absolute;
   top: 0;
@@ -197,54 +221,49 @@ function scrollToSection(id: string) {
   box-shadow: 0 0 8px var(--glow);
 }
 
+/* Individual ring sizes and rotation speeds (alternating directions) */
 .orbit-ring.ring-1 {
   width: 100px;
   height: 100px;
   animation: spin 20s linear infinite;
 }
-
 .orbit-ring.ring-2 {
   width: 150px;
   height: 150px;
   animation: spin 30s linear infinite reverse;
 }
-
 .orbit-ring.ring-3 {
   width: 190px;
   height: 190px;
   animation: spin 40s linear infinite;
 }
-
 .orbit-ring.ring-4 {
   width: 210px;
   height: 210px;
   animation: spin 35s linear infinite reverse;
 }
-
 .orbit-ring.ring-5 {
   width: 250px;
   height: 250px;
   animation: spin 45s linear infinite;
 }
-
 .orbit-ring.ring-6 {
   width: 290px;
   height: 290px;
   animation: spin 55s linear infinite reverse;
 }
-
 .orbit-ring.ring-7 {
   width: 330px;
   height: 330px;
   animation: spin 65s linear infinite;
 }
-
 .orbit-ring.ring-8 {
   width: 370px;
   height: 370px;
   animation: spin 75s linear infinite reverse;
 }
 
+/* Central glowing dot at the center of all rings */
 .center-dot {
   position: absolute;
   top: 50%;
@@ -257,11 +276,13 @@ function scrollToSection(id: string) {
   box-shadow: 0 0 20px var(--glow), 0 0 40px var(--glow);
 }
 
+/* Spin keyframes: each ring rotates around the center point */
 @keyframes spin {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+/* Navigation label on each ring: small, uppercase text positioned near the top */
 .orbit-label {
   position: absolute;
   top: 12px;
@@ -283,45 +304,42 @@ function scrollToSection(id: string) {
   text-shadow: 0 0 6px rgba(16, 185, 129, 0.3);
   transition: color 0.2s, text-shadow 0.2s;
 }
-
 .orbit-label:hover {
   color: var(--accent);
   text-shadow: 0 0 8px var(--glow), 0 0 16px var(--glow);
 }
 
+/* Counter-spin animations keep labels upright (readable) as their ring rotates.
+   Each ring's label counter-rotates at the same speed but opposite direction. */
 .orbit-ring.ring-2 .orbit-label {
   animation: counter-spin 30s linear infinite;
 }
-
 .orbit-ring.ring-3 .orbit-label {
   animation: counter-spin 40s linear infinite reverse;
 }
-
 .orbit-ring.ring-4 .orbit-label {
   animation: counter-spin 35s linear infinite;
 }
-
 .orbit-ring.ring-5 .orbit-label {
   animation: counter-spin 45s linear infinite reverse;
 }
-
 .orbit-ring.ring-6 .orbit-label {
   animation: counter-spin 55s linear infinite;
 }
-
 .orbit-ring.ring-7 .orbit-label {
   animation: counter-spin 65s linear infinite reverse;
 }
-
 .orbit-ring.ring-8 .orbit-label {
   animation: counter-spin 75s linear infinite;
 }
 
+/* Counter-spin keyframes (same as spin, used to cancel ring rotation for labels) */
 @keyframes counter-spin {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+/* Responsive: stack content vertically on small screens, shrink orbit visual */
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
