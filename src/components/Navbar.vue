@@ -62,6 +62,7 @@ function navigateAndScrollTo(section: string) {
       </button>
       <div id="mobile-menu" class="nav-links hidden">
         <a v-for="item in navItems" :key="item.id" :href="`#${item.id}`" @click.prevent="navigateAndScrollTo(item.id)">{{ item.label }}</a>
+        <RouterLink to="/project">This Project</RouterLink>
       </div>
       <div class="nav-links desktop">
         <a v-for="item in navItems" :key="item.id" @click.prevent="navigateAndScrollTo(item.id)">{{ item.label }}</a>
