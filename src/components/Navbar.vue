@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { RouterLink, useRouter } from 'vue-router'
 
 defineOptions({ name: 'MainNavbar' })
 
 const scrolled = ref(false)
+const router = useRouter()
 
 const navItems = [
   { label: 'About', id: 'about' },
@@ -23,13 +25,27 @@ window.addEventListener('scroll', () => {
   scrolled.value = window.scrollY > 20
 })
 
-function scrollTo(section: string) {
+function scrollTo(section: string) {    
   const el = document.getElementById(section)
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
-    document.getElementById('mobile-menu')?.classList.add('hidden')
-  }
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+      document.getElementById('mobile-menu')?.classList.add('hidden')
+    }
+  
 }
+
+function navigateAndScrollTo(section: string) {
+  // check the URL path, if it is /project, first navigate to /, then scroll to the section
+  if (router.currentRoute.value.path === '/project') {
+    router.push('/').then(() => {
+      scrollTo(section)
+    })
+    return
+  }
+
+  scrollTo(section)
+}
+
 </script>
 
 <template>
@@ -45,10 +61,11 @@ function scrollTo(section: string) {
         <span></span>
       </button>
       <div id="mobile-menu" class="nav-links hidden">
-        <a v-for="item in navItems" :key="item.id" :href="`#${item.id}`" @click.prevent="scrollTo(item.id)">{{ item.label }}</a>
+        <a v-for="item in navItems" :key="item.id" :href="`#${item.id}`" @click.prevent="navigateAndScrollTo(item.id)">{{ item.label }}</a>
       </div>
       <div class="nav-links desktop">
-        <a v-for="item in navItems" :key="item.id" @click.prevent="scrollTo(item.id)">{{ item.label }}</a>
+        <a v-for="item in navItems" :key="item.id" @click.prevent="navigateAndScrollTo(item.id)">{{ item.label }}</a>
+        <RouterLink to="/project">This Project</RouterLink>
       </div>
     </div>
   </nav>

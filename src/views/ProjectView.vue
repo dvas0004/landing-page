@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import Navbar from '../components/Navbar.vue'
 
 defineOptions({ name: 'AboutView' })
 
@@ -14,23 +15,11 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', () => {})
 })
-
-function scrollToHome() {
-  location.href = '/'
-}
 </script>
 
 <template>
   <div class="about-page">
-    <nav class="about-navbar" :class="{ scrolled: scrolled }">
-      <div class="container navbar-inner">
-        <button class="home-link" @click="scrollToHome">DV</button>
-        <div class="nav-links">
-          <a href="/" @click.prevent="scrollToHome">Home</a>
-          <a href="/about" class="active">About Project</a>
-        </div>
-      </div>
-    </nav>
+    <Navbar />
 
     <main class="about-content">
       <section class="hero-section">
