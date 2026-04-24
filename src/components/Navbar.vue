@@ -14,6 +14,7 @@ const navItems = [
   { label: 'CyberSift', id: 'cybersift' },
   { label: 'Education', id: 'education' },
   { label: 'Skills', id: 'skills' },
+  { label: 'Resources', id: 'resources' },
   { label: 'Contact', id: 'contact' },
 ]
 

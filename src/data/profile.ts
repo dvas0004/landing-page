@@ -161,3 +161,11 @@ export const contact = {
   blog: 'https://blog.davidvassallo.me',
   email: 'david.vassallo at cybersift.io',
 }
+
+export const resources =[
+  {
+    title: "ISACA Talk April 2026 - Closing the Loop",
+    description: "Talk on how human feedback improves security operations over time",
+    link: "/ISACA April 2026 - Closing the Loop How Human Feedback Improves Security Operations Over Time.pdf",
+  }
+]

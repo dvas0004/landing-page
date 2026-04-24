@@ -8,6 +8,7 @@ import CybersiftSection from '../components/sections/CybersiftSection.vue'
 import EducationSection from '../components/sections/EducationSection.vue'
 import SkillsSection from '../components/sections/SkillsSection.vue'
 import ContactSection from '../components/sections/ContactSection.vue'
+import ResourcesSection from '../components/sections/ResourcesSection.vue'
 </script>
 
 <template>
@@ -19,5 +20,6 @@ import ContactSection from '../components/sections/ContactSection.vue'
   <CybersiftSection />
   <EducationSection />
   <SkillsSection />
+  <ResourcesSection />
   <ContactSection />
 </template>
