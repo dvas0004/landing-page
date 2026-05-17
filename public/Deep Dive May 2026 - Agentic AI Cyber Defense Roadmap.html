@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Dive — Agentic AI & Cyber Defense Roadmap</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f4f6f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;">
+<table cellpadding="0" cellspacing="0" width="100%" style="max-width:640px;margin:auto;">
+<tr><td align="center" style="padding:20px 10px;">
+
+<!-- Header -->
+<table width="100%" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);border-radius:12px 12px 0 0;padding:32px 28px;color:#ffffff;text-align:center;">
+<tr><td>
+<h1 style="font-size:24px;margin:0 0 8px 0;font-weight:700;">Agentic AI & Cyber Defense</h1>
+<p style="font-size:15px;margin:0 0 6px 0;opacity:0.85;">A Deep Dive Into the Defensive Roadmap</p>
+<hr style="border:none;border-top:1px solid rgba(255,255,255,0.2);margin:16px 0;">
+<p style="font-size:12px;margin:0;opacity:0.6;">Source: arXiv:2605.06713v1 | May 2026</p>
+</td></tr>
+</table>
+
+<!-- Executive Summary -->
+<table width="100%" style="background:#ffffff;border-left:4px solid #0f3460;border-radius:0 0 12px 12px;padding:28px;">
+
+<tr><td>
+<h2 style="font-size:20px;color:#1a1a2e;margin:0 0 16px 0;">Executive Summary</h2>
+<p style="font-size:14px;line-height:1.7;color:#333333;margin:0 0 16px 0;">
+<strong>Agentic AI marks a paradigm shift:</strong> attackers can now plan, call tools, inspect code, and coordinate multi-step workflows automatically. The core risk is not mass super-hackers — it is the <span style="color:#c0392b;"><strong>compression of the attack lifecycle</strong></span>. Phishing, reconnaissance, credential abuse, vulnerability triage, exploit adaptation, and post-compromise decisions are all getting cheaper and faster.
+</p>
+<p style="font-size:14px;line-height:1.7;color:#333333;margin:0;">
+The paper introduces a <strong>Three-Channel Risk Model</strong> (criminals using agents, agents as targets, agents as risky insiders) and an <strong>Agentic Attack Compression Model (AACM)</strong> showing six mechanisms by which attacker cost, skill, and timing are reduced.
+</p>
+</td></tr>
+
+<!-- Three-Channel Risk Model -->
+<tr><td style="padding-top:28px;">
+<h2 style="font-size:20px;color:#1a1a2e;margin:0 0 16px 0;">The Three-Channel Agentic Cyber-Risk Model</h2>
+<div style="overflow-x:auto;">
+<table width="100%" cellpadding="10" cellspacing="0" style="min-width:500px;font-size:13px;border-collapse:collapse;">
+<thead>
+<tr style="background:#0f3460;color:#fff;">
+<th style="text-align:left;border-radius:6px 0 0 0;width:25%;">Risk Channel</th>
+<th style="width:35%;">Threat Impact</th>
+<th style="border-radius:0 6px 0 0;width:40%;">Defense Response</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background:#fdf2f2;">
+<td style="border-bottom:solid 1px #eee;font-weight:600;color:#c0392b;">1. Criminals Use Agents</td>
+<td style="border-bottom:solid 1px #eee;">More attacks, better personalization, shorter patch windows, lower skill barrier</td>
+<td style="border-bottom:solid 1px #eee;">Phishing-resistant identity, exposure management, patch velocity, detection engineering</td>
+</tr>
+<tr style="background:#fff8f0;">
+<td style="border-bottom:solid 1px #eee;font-weight:600;color:#e67e22;">2. Agents as Targets</td>
+<td style="border-bottom:solid 1px #eee;">Data exfiltration, unauthorized tool use, persistence, supply-chain compromise</td>
+<td style="border-bottom:solid 1px #eee;">Agent inventory, least privilege, secrets management, runtime monitoring</td>
+</tr>
+<tr>
+<td style="font-weight:600;color:#e67e22;">3. Agents as Risky Insiders</td>
+<td>Unintended state changes, data leakage, unsafe automation, compliance failures</td>
+<td>Human approval gates, bounded tools, policy-as-code, audit traces, rollback plans</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td></tr>
+
+<!-- The Core Mechanism: AACM -->
+<tr><td style="padding-top:28px;">
+<h2 style="font-size:20px;color:#1a1a2e;margin:0 0 16px 0;">The Agentic Attack Compression Model (AACM)</h2>
+<p style="font-size:14px;line-height:1.7;color:#333333;margin:0 0 16px 0;">
+Agentic AI compresses attacks through <strong>six key mechanisms</strong>, without needing to invent entirely new attack classes:
+</p>
+<table width="100%" cellpadding="8" cellspacing="0" style="font-size:13px;">
+<tr style="background:#f0f4f8;">
+<td style="width:20%;border-radius:6px 0 0 6px;"><strong>Recon</strong></td>
+<td style="border-radius:0 6px 6px 6px;">Scraping public repos, job postings, docs, cloud configs → cheaper, scalable target profiling</td>
+</tr>
+<tr><td style="padding-top:8px;"><strong>Phishing &amp; BEC</strong></td>
+<td style="padding-top:8px;">AI-generated, localized, personalized lures at massive scale (Microsoft: AI-automated phishing is live in 2025)</td>
+</tr>
+<tr style="background:#f0f4f8;"><td><strong>Credential Abuse</strong></td>
+<td>Identity-heavy, process-driven attacks amplified — helpdesk impersonation, vishing, SaaS abuse (CrowdStrike: 81% malware-free intrusions)</td>
+</tr>
+<tr><td><strong>Vuln Exploitation</strong></td>
+<td>Advisory→exploit timeline shrinks; LLM agents exploit one-day vulns from CVE descriptions (Fang et al.)</td>
+</tr>
+<tr style="background:#f0f4f8;"><td><strong>Post-Compromise</strong></td>
+<td>Summarize internal data, identify privilege paths, draft commands, prioritize next steps</td>
+</tr>
+<tr><td style="border-radius:0 6px 6px 6px;"><strong>Chain Automation</strong></td>
+<td style="border-radius:0 6px 6px 6px;">Multi-step campaigns coordinated without deep continuous expertise at every stage</td>
+</tr>
+</table>
+</td></tr>
+
+<!-- Case Study: Copy Fail -->
+<tr><td style="padding-top:28px;">
+<h2 style="font-size:20px;color:#1a1a2e;margin:0 0 16px 0;">Case Study: "Copy Fail" — CVE-2026-31431</h2>
+<p style="font-size:14px;line-height:1.7;color:#333333;margin:0 0 12px 0;">
+A Linux kernel <strong>local privilege-escalation</strong> flaw — not remotely exploitable alone, but devastating when combined with any foothold (SSH breach, malicious CI job, container compromise).
+</p>
+<table width="100%" cellpadding="8" style="font-size:13px;background:#fff3cd;border-radius:6px;">
+<tr><td style="color:#856404;">
+<strong>Why this matters for AI defenses:</strong> AI-assisted code analysis + publicly available exploits = the gap between foothold and root is collapsing. A compromised developer account or CI runner can become full organizational compromise if kernel patching lags.
+<br><br>
+<em>Key takeaway: prioritize chainability over raw CVSS scores.</em>
+</td></tr>
+</table>
+</td></tr>
+
+<!-- ===== DEFENSIVE ROADMAP — MAIN FOCUS ===== -->
+<tr><td style="padding-top:32px;">
+<h2 style="font-size:22px;color:#0f3460;margin:0 0 8px 0;padding-bottom:12px;border-bottom:2px solid #0f3460;">DEFENSIVE ROADMAP 2026–2028</h2>
+<p style="font-size:14px;color:#555;margin:0 0 20px 0;">Prioritized, actionable controls organized by pillar. Start here.</p>
+</td></tr>
+
+<!-- Pillar 1 -->
+<tr><td style="padding-bottom:20px;">
+<table width="100%" style="border:1px solid #ddd;border-radius:8px;overflow:hidden;">
+<tr style="background:#e8f5e9;">
+<td style="padding:14px 18px;font-size:15px;font-weight:700;color:#2e7d32;">Pillar 1: Identity & Authentication</td>
+</tr>
+<tr><td style="padding:14px 18px;font-size:13px;line-height:1.7;color:#333;">
+• Enforce <strong>phishing-resistant MFA</strong> (FIDO2/WebAuthn) for all admins & remote access<br>
+• Redesign helpdesk reset procedures; implement voice/video verification<br>
+• Enable & <strong>enforce DMARC</strong> (reject mode) for all domains; validate SPF/DKIM<br>
+• Out-of-band approval gates for payments, banking changes, privileged-account changes<br>
+• Govern <strong>non-human identities</strong> — service accounts, API keys, bot credentials
+</td></tr>
+</table>
+</td></tr>
+
+<!-- Pillar 2 -->
+<tr><td style="padding-bottom:20px;">
+<table width="100%" style="border:1px solid #ddd;border-radius:8px;overflow:hidden;">
+<tr style="background:#e3f2fd;">
+<td style="padding:14px 18px;font-size:15px;font-weight:700;color:#1565c0;">Pillar 2: Linux, Container & CI/CD Hardening</td>
+</tr>
+<tr><td style="padding:14px 18px;font-size:13px;line-height:1.7;color:#333;">
+• Inventory ALL Linux kernels, Kubernetes nodes, CI runners, shared-hosting systems<br>
+• Apply CVE-2026-31431 mitigations immediately; vendor patches or disable vulnerable modules<br>
+• Prioritize systems accepting <strong>untrusted workloads</strong> or permitting local code execution<br>
+• Use <strong>ephemeral/isolated runners;</strong> reduce privileged containers; protect secrets vaults<br>
+• Enforce <strong>least privilege</strong> for build identities; monitor cloud control-plane anomalies
+</td></tr>
+</table>
+</td></tr>
+
+<!-- Pillar 3 -->
+<tr><td style="padding-bottom:20px;">
+<table width="100%" style="border:1px solid #ddd;border-radius:8px;overflow:hidden;">
+<tr style="background:#fff3e0;">
+<td style="padding:14px 18px;font-size:15px;font-weight:700;color:#ef6c00;">Pillar 3: Patch Velocity & Exposure Management</td>
+</tr>
+<tr><td style="padding:14px 18px;font-size:13px;line-height:1.7;color:#333;">
+• Shift from periodic scanning to <strong>KEV- & exploit-aware</strong> prioritization<br>
+• Track <strong>median & 95th-percentile patch latency</strong> as board-level metrics<br>
+• Cover: cloud appliances, VPNs, identity providers, web apps, container hosts<br>
+• Define <strong>emergency change windows</strong>; break through bureaucracy for KEV-listed vulns<br>
+• Prioritize chainability over CVSS alone (e.g., privesc + reachable initial access = critical)
+</td></tr>
+</table>
+</td></tr>
+
+<!-- Pillar 4 -->
+<tr><td style="padding-bottom:20px;">
+<table width="100%" style="border:1px solid #ddd;border-radius:8px;overflow:hidden;">
+<tr style="background:#fce4ec;">
+<td style="padding:14px 18px;font-size:15px;font-weight:700;color:#c62828;">Pillar 4: Recovery & Resilience</td>
+</tr>
+<tr><td style="padding:14px 18px;font-size:13px;line-height:1.7;color:#333;">
+• Verify <strong>immutable and/or offline backups</strong> for all critical systems<br>
+• Run at least one <strong>full restore drill</strong> quarterly — paper tests don't count<br>
+• Identify Minimum Viable Operations (MVO) if email, ERP, file sharing go down<br>
+• Segment critical networks; prepare crisis comms templates & supplier failover plans
+</td></tr>
+</table>
+</td></tr>
+
+<!-- Pillar 5 -->
+<tr><td style="padding-bottom:20px;">
+<table width="100%" style="border:1px solid #ddd;border-radius:8px;overflow:hidden;">
+<tr style="background:#ede7f6;">
+<td style="padding:14px 18px;font-size:15px;font-weight:700;color:#4527a0;">Pillar 5: SOC Telemetry & Detection</td>
+</tr>
+<tr><td style="padding:14px 18px;font-size:13px;line-height:1.7;color:#333;">
+• Integrate identity, endpoint, cloud, email, network signals into unified views<br>
+• Detect: impossible travel, MFA fatigue, suspicious OAuth grants, rapid privilege escalations<br>
+• Use <strong>AI defensively</strong> for triage & correlation — keep humans in the loop for destructive actions<br>
+• Alert on abnormal admin actions & non-standard API call patterns
+</td></tr>
+</table>
+</td></tr>
+
+<!-- Pillar 6 -->
+<tr><td style="padding-bottom:20px;">
+<table width="100%" style="border:1px solid #ddd;border-radius:8px;overflow:hidden;">
+<tr style="background:#e0f7fa;">
+<td style="padding:14px 18px;font-size:15px;font-weight:700;color:#00695c;">Pillar 6: Agent Governance & Supply Chain</td>
+</tr>
+<tr><td style="padding:14px 18px;font-size:13px;line-height:1.7;color:#333;">
+• Inventory all <strong>internal AI agents</strong>; assign owners; restrict tools/data by role<br>
+• Require human approval for state-changing actions; log traces securely<br>
+• Test agents against prompt injection, excessive agency, data exfiltration, tool misuse<br>
+• Suppliers & MSPs must document MFA, backup, patch & IR posture; rehearse outage scenarios<br>
+• Shared/MSSP coverage for entities lacking 24/7 security capability
+</td></tr>
+</table>
+</td></tr>
+
+<!-- Key Metrics -->
+<tr><td style="padding-top:28px;">
+<h2 style="font-size:20px;color:#1a1a2e;margin:0 0 16px 0;">Board-Level Metrics to Track</h2>
+<table width="100%" cellpadding="8" style="font-size:13px;">
+<tr style="background:#f5f5f5;"><td style="border-radius:6px 0 0 6px;">1.</td><td style="border-radius:0 6px 6px 6px;">Phishing-resistant MFA coverage % (privileged & high-risk users)</td></tr>
+<tr style="background:#fafafa;"><td>2.</td><td>Median & 95th-percentile patch latency for KEV/exploited vulnerabilities</td></tr>
+<tr><td>3.</td><td>Internet-facing assets without assigned owner & patch SLA</td></tr>
+<tr style="background:#fafafa;"><td>4.</td><td>Count of privileged non-human identities & stale/secret-expired tokens</td></tr>
+<tr><td>5.</td><td>Backup restore success rate & time-to-restore critical services</td></tr>
+<tr style="background:#fafafa;"><td>6.</td><td>CI/CD runners & K8s nodes with untrusted-workload exposure</td></tr>
+<tr><td>7.</td><td>Production AI agents: owners, permission scopes, tool access, audit logs</td></tr>
+<tr style="background:#fafafa;"><td>8.</td><td>Mean time to detect (MTTD) & mean time to contain (MTTC) identity compromises</td></tr>
+</table>
+</td></tr>
+
+<!-- Forecast Summary -->
+<tr><td style="padding-top:28px;">
+<h2 style="font-size:20px;color:#1a1a2e;margin:0 0 16px 0;">2026–2028 Threat Forecast</h2>
+<table width="100%" cellpadding="8" cellspacing="0" style="font-size:13px;border-collapse:separate;border-spacing:0 6px;">
+<tr>
+<td style="vertical-align:top;width:100px;background:#fff3e0;border-radius:6px;padding:12px;">
+<strong style="color:#e65100;">2026 (Near-term)</strong>
+</td>
+<td style="vertical-align:top;background:#fefefe;border:1px solid #eee;border-radius:6px;padding:12px;">
+More convincing phishing, faster credential abuse, faster weaponization of public advisories, AI-assisted script adaptation.<br>
+<em style="color:#555;">Defense: Identity, email trust, urgent patching, external attack surface, backups.</em>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;background:#ffe0b2;border-radius:6px;padding:12px;">
+<strong style="color:#e65100;">2027 (Mid-term)</strong>
+</td>
+<td style="vertical-align:top;background:#fefefe;border:1px solid #eee;border-radius:6px;padding:12px;">
+Semi-autonomous recon, exploit-chain assistance, SaaS/cloud workflow abuse, agent-targeting, helpdesk impersonation at scale.<br>
+<em style="color:#555;">Defense: Phishing-resistant MFA everywhere, govern non-human IDs, harden CI/CD, cloud-control-plane monitoring.</em>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top;background:#ffcc80;border-radius:6px 0 0 6px;padding:12px;">
+<strong style="color:#bf360c;">2028+ (Frontier)</strong>
+</td>
+<td style="vertical-align:top;background:#fefefe;border:1px solid #eee;border-radius:0 6px 6px 6px;padding:12px;">
+Crimeware-as-a-service packaging agentic workflows; frontier-AI exploit development by capable actors.<br>
+<em style="color:#555;">Defense: AI-aware SOC workflows, threat-informed exposure management, agent runtime controls, continuous validation.</em>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<!-- Mittelstand Note -->
+<tr><td style="padding-top:28px;">
+<table width="100%" cellpadding="16" style="background:#e8eaf6;border-radius:8px;">
+<tr><td style="font-size:14px;line-height:1.7;color:#283593;">
+<strong>Mittelstand / SME Priority:</strong>
+Don't try to build a hyperscale SOC. Close the most common, highest-leverage gaps:
+endpoint protection, phishing-resistant MFA, secure backups, patch SLAs for exposed systems, clear MSP contracts, emergency contacts, and incident-response drills. Sector-level security cooperation and MSSP partnerships offer the most realistic path forward.
+</td></tr>
+</table>
+</td></tr>
+
+<!-- Bottom Line -->
+<tr><td style="padding-top:28px;">
+<table width="100%" cellpadding="20" style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:8px;color:#ffffff;text-align:center;">
+<tr><td style="font-size:15px;line-height:1.7;">
+<strong>The Bottom Line</strong><br><br>
+Agentic AI doesn't create brand-new attack classes — it <strong>compresses timelines, lowers costs, and reduces skill barriers</strong> across the entire kill chain. Neither panic nor complacency is the right response. Organizations that adopt <span style="color:#64ffda;">these eight pillars now</span> will force attackers back into higher-cost, lower-success paths.
+</td></tr>
+</table>
+</td></tr>
+
+<!-- Footer -->
+<tr><td style="padding-top:24px;font-size:11px;color:#999;text-align:center;line-height:1.6;">
+This summary is derived from <strong>arXiv:2605.06713v1</strong> — "Agentic AI and the Industrialization of Cyber Offense"<br>
+Synthesizes findings from NCSC, Microsoft DDR 2025, Verizon DBIR 2025, CrowdStrike, OWASP, CISA, NSA/ACSC, ENISA, and more.<br>
+Not legal or professional advice. For informational purposes only.
+</td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

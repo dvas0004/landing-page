@@ -164,6 +164,11 @@ export const contact = {
 
 export const resources =[
   {
+    title: "Deep Dive May 2026 - Agentic AI Cyber Defense Roadmap",
+    description: "This summary is derived from arXiv:2605.06713v1 — \"Agentic AI and the Industrialization of Cyber Offense\"\nSynthesizes findings from NCSC, Microsoft DDR 2025, Verizon DBIR 2025, CrowdStrike, OWASP, CISA, NSA/ACSC, ENISA, and more.",
+    link: "/Deep Dive May 2026 - Agentic AI Cyber Defense Roadmap.html",
+  },
+  {
     title: "ISACA Talk April 2026 - Closing the Loop",
     description: "Talk on how human feedback improves security operations over time",
     link: "/ISACA April 2026 - Closing the Loop How Human Feedback Improves Security Operations Over Time.pdf",
